@@ -1,0 +1,35 @@
+apply plugin: BuildPlugins.androidApplication
+apply plugin: BuildPlugins.kotlinAndroid
+apply plugin: BuildPlugins.kotlinAndroidExtensions
+apply plugin: BuildPlugins.kotlinKapt
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.0"
+    defaultConfig {
+        applicationId "com.example.nbageek"
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation Libraries.kotlinStandardLibrary
+    implementation Libraries.appCompat
+    implementation Libraries.kotlinKtx
+    implementation Libraries.constrainLayout
+    implementation Libraries.googleMaterial
+    testImplementation TestImplementation.jUnit
+    androidTestImplementation TestImplementation.testRunner
+    androidTestImplementation TestImplementation.espressoCore
+}
