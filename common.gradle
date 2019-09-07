@@ -1,0 +1,44 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion Releases.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion Releases.minSdkVersion
+        targetSdkVersion Releases.targetSdkVersion
+        versionCode Releases.versionCode
+        versionName Releases.versionName
+
+    }
+
+    buildTypes {
+        debug {
+
+        }
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation Libraries.kotlinStandardLibrary
+    implementation Libraries.appCompat
+    implementation Libraries.kotlinKtx
+    implementation Libraries.constrainLayout
+    implementation Libraries.googleMaterial
+    implementation Libraries.deepLink
+    kapt Libraries.deepLinkAnotation
+    testImplementation TestImplementation.jUnit
+    androidTestImplementation TestImplementation.testRunner
+    androidTestImplementation TestImplementation.espressoCore
+}
