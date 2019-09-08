@@ -1,5 +1,5 @@
 # Android-Kotlin-Dsl
- If you work with big android project, its really common to modularize the app. When it happens, gradle dependencies seems really worst because we have to add repetitive dependencies to all of our module. So why Kotlin DSL comes to the world, it can centralize our dependencies and make it more easy with auto complete (In your gradle file). Then for communication between each modules, I'am using [Deeplink Dispatcher](https://github.com/airbnb/DeepLinkDispatch) from Airbnb.
+ If you work with big android project, its really common to modularize the app. When it happens, gradle dependencies seems really worst because we have to add repetitive dependencies to all of our module. So why Kotlin DSL comes to the world, it can centralize our dependencies and make it more easy with auto complete (In your gradle file). Then for communication between each modules, I'am using [Deeplink Dispatcher](https://github.com/airbnb/DeepLinkDispatch) by Airbnb.
 
 ## Technology
 - Kotlin DSL
@@ -14,5 +14,10 @@ Clone this project, open with and run with Android Studio. If you want to test D
 adb shell am start -W -a android.intent.action.VIEW -d "nba//:www.nbageek.com/team/123" com.example.nbageek
 `
 3. Tadaaaa~ you start the activity explicitly
+
+### DeepLink Available
+Choose your deeplink :
+ 1. `nba//:www.nbageek.com/team/{id}`
+ 2. `nba//:www.nbageek.com/home`
 
 
