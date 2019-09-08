@@ -10,9 +10,9 @@
 Clone this project, open with and run with Android Studio. If you want to test Deeplink , you can easily do :
 1. Open terminal and go to this path file
 2. After emulator or another devices start then run this in your terminal 
-```
+`
 adb shell am start -W -a android.intent.action.VIEW -d "nba//:www.nbageek.com/team/123" com.example.nbageek
-```
+`
 3. Tadaaaa~ you start the activity explicitly
 
 
