@@ -1,5 +1,5 @@
 # Android-Kotlin-Dsl
- If you work with big android project, its really common to modularize the app. When its happen gradle dependencies seems really worst because we have to add repetitive dependencies to all of our module. So why Kotlin DSL comes to the world, it can centralize our dependencies and make it more easy with auto complete (In your gradle file). Then for communication between each modules, I'am using [Deeplink Dispatcher](https://github.com/airbnb/DeepLinkDispatch) from Airbnb.
+ If you work with big android project, its really common to modularize the app. When it happens, gradle dependencies seems really worst because we have to add repetitive dependencies to all of our module. So why Kotlin DSL comes to the world, it can centralize our dependencies and make it more easy with auto complete (In your gradle file). Then for communication between each modules, I'am using [Deeplink Dispatcher](https://github.com/airbnb/DeepLinkDispatch) from Airbnb.
 
 ## Technology
 - Kotlin DSL
