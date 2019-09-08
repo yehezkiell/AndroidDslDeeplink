@@ -10,6 +10,7 @@
         tools:context=".HomeActivity">
 
     <TextView
+            android:id="@+id/txt_home"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"

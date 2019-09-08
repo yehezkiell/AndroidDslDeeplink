@@ -47,8 +47,5 @@ dependencies {
     androidTestImplementation TestImplementation.espressoCore
 
     implementation project(Modules.home)
-}
-
-repositories {
-    google()
+    implementation project(Modules.team)
 }

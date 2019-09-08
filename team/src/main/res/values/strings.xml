@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">team</string>
+    <string name="title_activity_team_list">TeamListActivity</string>
+</resources>

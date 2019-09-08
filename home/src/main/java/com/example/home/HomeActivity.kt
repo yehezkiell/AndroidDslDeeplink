@@ -1,14 +1,17 @@
 package com.example.home
 
+import android.content.Intent
+import android.content.Intent.ACTION_VIEW
+import android.net.Uri
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.deeplinkdispatch.DeepLink
-
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.content_home.*
 
 
-@DeepLink("home://nbageek.com")
+@DeepLink("nba://www.nbageek.com/home")
 class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,10 +24,13 @@ class HomeActivity : AppCompatActivity() {
             onBackPressed()
         }
 
+        txt_home.setOnClickListener {
+            startActivity(Intent(ACTION_VIEW, Uri.parse("nba://www.nbageek.com/team/12345")))
+        }
+
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
     }
-
 }
