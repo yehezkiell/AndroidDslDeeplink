@@ -5,4 +5,5 @@ object Modules {
     //feature level
     val home = ":home"
     val team = ":team"
+    val abstraction = ":abstraction"
 }

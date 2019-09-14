@@ -4,6 +4,10 @@ apply plugin: BuildPlugins.kotlinAndroidExtensions
 apply plugin: BuildPlugins.kotlinKapt
 
 android {
+    dataBinding{
+        enabled = true
+    }
+
     compileSdkVersion Releases.compileSdkVersion
 
     defaultConfig {
@@ -17,7 +21,6 @@ android {
 
     buildTypes {
         debug {
-
         }
         release {
             minifyEnabled false
@@ -28,6 +31,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
 }
 
 dependencies {
@@ -37,10 +41,28 @@ dependencies {
     implementation Libraries.kotlinKtx
     implementation Libraries.constrainLayout
     implementation Libraries.googleMaterial
+    implementation Libraries.dagger
+    implementation Libraries.daggerAndroid
+    implementation Libraries.daggerAndroidSupport
+    implementation Libraries.retrofit
+    implementation Libraries.gson
+    implementation Libraries.okHttpLogging
+
+
+    kapt Libraries.daggerAndroidSupportCompiler
+    kapt Libraries.daggerCompiler
 
     //Deeplink
     implementation Libraries.deepLink
     kapt Libraries.deepLinkAnotation
+
+    implementation Libraries.coroutines
+    implementation Libraries.coroutinesAdapter
+    implementation Libraries.coroutinesAndroid
+
+    implementation Libraries.lifecycle
+    kapt Libraries.lifecycleCompiler
+    implementation Libraries.liveData
 
     testImplementation TestImplementation.jUnit
     androidTestImplementation TestImplementation.testRunner
@@ -48,4 +70,7 @@ dependencies {
 
     implementation project(Modules.home)
     implementation project(Modules.team)
+    implementation project(Modules.abstraction)
 }
+
+

@@ -4,6 +4,10 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
+
+    dataBinding{
+        enabled = true
+    }
     compileSdkVersion Releases.compileSdkVersion
 
     defaultConfig {
@@ -11,6 +15,10 @@ android {
         targetSdkVersion Releases.targetSdkVersion
         versionCode Releases.versionCode
         versionName Releases.versionName
+
+        // Global Constant
+        buildConfigField("String", "API_KEY", nbaAPIUrl)
+
 
     }
 
@@ -37,6 +45,31 @@ dependencies {
     implementation Libraries.constrainLayout
     implementation Libraries.googleMaterial
     implementation Libraries.deepLink
+    implementation Libraries.dagger
+    implementation Libraries.daggerAndroid
+    implementation Libraries.daggerAndroidSupport
+    implementation Libraries.retrofit
+    implementation Libraries.okHttpLogging
+    implementation Libraries.gson
+
+    implementation Libraries.glide
+    kapt Libraries.glideCompiler
+
+    implementation Libraries.coroutines
+    implementation Libraries.coroutinesAdapter
+    implementation Libraries.coroutinesAndroid
+    implementation Libraries.glide
+    kapt Libraries.glideCompiler
+
+    implementation Libraries.lifecycle
+    kapt Libraries.lifecycleCompiler
+    implementation Libraries.liveData
+
+    kapt Libraries.daggerAndroidSupportCompiler
+    kapt Libraries.daggerCompiler
+
+
+
     kapt Libraries.deepLinkAnotation
     testImplementation TestImplementation.jUnit
     androidTestImplementation TestImplementation.testRunner

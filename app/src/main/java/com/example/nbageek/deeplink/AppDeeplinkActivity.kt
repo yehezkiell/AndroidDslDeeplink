@@ -19,7 +19,6 @@ class AppDeeplinkActivity : Activity() {
             TeamDeepLinkModuleLoader()
         )
 
-
         deeplinkDelegate.dispatchFrom(this)
         finish()
     }
