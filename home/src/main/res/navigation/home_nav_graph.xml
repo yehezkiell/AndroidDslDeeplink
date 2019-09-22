@@ -9,7 +9,7 @@
             android:id="@+id/homeFragment"
             android:name="com.example.home.ui.HomeFragment"
             android:label="Home"
-            tools:layout="@layout/fragment_home" >
+            tools:layout="@layout/fragment_home">
         <action
                 android:id="@+id/actionHome_To_Matchdetail"
                 app:destination="@id/matchDetailFragment" />
@@ -17,5 +17,23 @@
     <fragment
             android:id="@+id/matchDetailFragment"
             android:name="com.example.home.ui.MatchDetailFragment"
-            android:label="MatchDetailFragment" />
+            android:label="MatchDetailFragment">
+        <action
+                android:id="@+id/action_matchDetailFragment_to_playerFragment"
+                app:destination="@id/playerFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/playerFragment"
+            android:name="com.example.home.ui.PlayerFragment"
+            android:label="PlayerFragment">
+
+        <!--
+         popUpTo is using for clear all the back stack,
+         popUpToInclusive is for clear the destination specified by popUpTo which is homeFragment
+         -->
+        <action
+                android:id="@+id/popUp_To_Home"
+                app:popUpTo="@id/homeFragment"
+                app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
