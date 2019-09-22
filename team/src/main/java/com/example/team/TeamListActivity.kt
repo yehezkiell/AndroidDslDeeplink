@@ -21,13 +21,14 @@ class TeamListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_team_list)
-        setSupportActionBar(toolbar)
 
         intent?.let {
             if (it.getBooleanExtra(DeepLink.IS_DEEP_LINK, false)) {
                 teamId = it.extras?.getString(ID_PARAM) ?: ""
             }
         }
+
+        Log.e("datanya", teamId)
 
         txt_id.text = teamId
 

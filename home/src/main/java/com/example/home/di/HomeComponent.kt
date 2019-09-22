@@ -1,7 +1,7 @@
 package com.example.home.di
 
 import com.example.abstraction.di.BaseAppComponent
-import com.example.home.HomeActivity
+import com.example.home.ui.HomeActivity
 import dagger.Component
 
 @HomeScope

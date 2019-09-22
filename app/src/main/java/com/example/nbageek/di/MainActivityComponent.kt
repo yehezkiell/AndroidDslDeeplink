@@ -1,11 +1,11 @@
 package com.example.nbageek.di
 
-import com.example.nbageek.MainActivity
+import com.example.nbageek.MainParentActivity
 import dagger.Component
 
 @MainActivityScope
 @Component(modules = [MainActivityModule::class], dependencies = [com.example.abstraction.di.BaseAppComponent::class])
 interface MainActivityComponent {
 
-    fun inject(mainActivity: MainActivity)
+    fun inject(mainParentActivity: MainParentActivity)
 }

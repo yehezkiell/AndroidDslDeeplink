@@ -1,9 +1,12 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto"
-      xmlns:tools="http://schemas.android.com/tools"
-      tools:context="com.example.nbageek.MainActivity">
-    <item android:id="@+id/action_settings"
-          android:title="@string/action_settings"
-          android:orderInCategory="100"
-          app:showAsAction="never"/>
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:id="@+id/home_nav_graph"
+            android:icon="@drawable/ic_home_white"
+            android:title="@string/home_navigation_title" />
+
+    <item
+            android:id="@+id/team_nav_graph"
+            android:icon="@drawable/ic_teams_white"
+            android:title="@string/teams_navigation_title" />
 </menu>

@@ -27,6 +27,10 @@ android {
         }
     }
 
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -38,6 +42,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Libraries.kotlinStandardLibrary
     implementation Libraries.appCompat
+    implementation Libraries.coreKtx
     implementation Libraries.kotlinKtx
     implementation Libraries.constrainLayout
     implementation Libraries.googleMaterial
@@ -47,7 +52,11 @@ dependencies {
     implementation Libraries.retrofit
     implementation Libraries.gson
     implementation Libraries.okHttpLogging
-
+    implementation Libraries.navigationFragment
+    implementation Libraries.fragmentRuntime
+    implementation Libraries.fragmentRuntimeKtx
+    implementation Libraries.navigationKtx
+    implementation Libraries.viewModelKtx
 
     kapt Libraries.daggerAndroidSupportCompiler
     kapt Libraries.daggerCompiler
@@ -71,6 +80,7 @@ dependencies {
     implementation project(Modules.home)
     implementation project(Modules.team)
     implementation project(Modules.abstraction)
+
 }
 
 
