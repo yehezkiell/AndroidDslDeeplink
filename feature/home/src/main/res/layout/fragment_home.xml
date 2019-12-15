@@ -27,4 +27,31 @@
             app:layout_constraintRight_toRightOf="@+id/txt_home"
             app:layout_constraintTop_toBottomOf="@+id/txt_home" />
 
+    <TextView
+            android:id="@+id/sumByOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/txt_match_detail"
+            app:layout_constraintRight_toLeftOf="@+id/sumByTwo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:text="ADD 1"/>
+
+    <TextView
+            android:id="@+id/sumByTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/txt_match_detail"
+            app:layout_constraintLeft_toRightOf="@+id/sumByOne"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="ADD 2"/>
+
+    <TextView
+            android:id="@+id/sumResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/sumByOne"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="RESULT"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
