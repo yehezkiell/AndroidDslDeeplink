@@ -6,11 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.example.abstraction.di.MainApplication
 import com.example.nbageek.di.DaggerMainActivityComponent
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -64,7 +60,7 @@ class MainParentActivity : AppCompatActivity() {
 
     private fun initInjector() {
         DaggerMainActivityComponent.builder()
-            .baseAppComponent(MainApplication.get(this).getRandomUserApplicationComponent())
+            .baseAppComponent((application as MainApplication).getBaseAppComponent())
             .build()
             .inject(this)
     }

@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.deeplinkdispatch.DeepLink
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_team_list.*
-import android.content.Intent
 import kotlinx.android.synthetic.main.content_team_list.*
 
 @DeepLink("nba://www.nbageek.com/team/{id}")

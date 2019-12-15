@@ -1,43 +1,6 @@
-apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
-
-android {
-
-    dataBinding {
-        enabled = true
-    }
-    compileSdkVersion Releases.compileSdkVersion
-
-    defaultConfig {
-        minSdkVersion Releases.minSdkVersion
-        targetSdkVersion Releases.targetSdkVersion
-        versionCode Releases.versionCode
-        versionName Releases.versionName
-
-        // Global Constant
-        buildConfigField("String", "API_KEY", nbaAPIUrl)
-    }
-
-    buildTypes {
-        debug {
-
-        }
-        release {
-            minifyEnabled false
-        }
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-}
 
 dependencies {
 

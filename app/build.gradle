@@ -4,7 +4,7 @@ apply plugin: BuildPlugins.kotlinAndroidExtensions
 apply plugin: BuildPlugins.kotlinKapt
 
 android {
-    dataBinding{
+    dataBinding {
         enabled = true
     }
 
@@ -36,6 +36,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    dynamicFeatures = [":feature:player"]
 }
 
 dependencies {
@@ -82,5 +83,3 @@ dependencies {
     implementation project(Modules.abstraction)
 
 }
-
-

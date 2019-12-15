@@ -1,1 +1,1 @@
-include(":app",":home",":team",":abstraction")
+include(":app",":feature:home",":feature:team",":abstraction",":feature:player")

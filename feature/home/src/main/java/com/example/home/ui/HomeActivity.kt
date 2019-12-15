@@ -42,7 +42,7 @@ class HomeActivity : AppCompatActivity() {
 
     private fun initInjector() {
         DaggerHomeComponent.builder()
-            .baseAppComponent((applicationContext as MainApplication).getRandomUserApplicationComponent())
+            .baseAppComponent((applicationContext as MainApplication).getBaseAppComponent())
             .build().inject(this)
     }
 }

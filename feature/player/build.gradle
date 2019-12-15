@@ -1,0 +1,23 @@
+apply plugin: 'com.android.dynamic-feature'
+apply from: "$rootDir/dynamic-feature.gradle"
+
+android {
+    compileSdkVersion 29
+
+
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':app')
+}

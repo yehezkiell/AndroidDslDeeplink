@@ -3,7 +3,8 @@ object Modules {
     val app = ":app"
 
     //feature level
-    val home = ":home"
-    val team = ":team"
+    val home = ":feature:home"
+    val team = ":feature:team"
+    val player = ":feature:player"
     val abstraction = ":abstraction"
 }
