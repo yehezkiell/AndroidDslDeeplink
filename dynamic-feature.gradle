@@ -10,7 +10,6 @@ dependencies {
     implementation Libraries.coreKtx
     implementation Libraries.constrainLayout
     implementation Libraries.googleMaterial
-    implementation Libraries.deepLink
     implementation Libraries.dagger
     implementation Libraries.daggerAndroid
     implementation Libraries.daggerAndroidSupport
@@ -36,7 +35,6 @@ dependencies {
     kapt Libraries.glideCompiler
     kapt Libraries.lifecycleCompiler
     kapt Libraries.glideCompiler
-    kapt Libraries.deepLinkAnotation
 
     testImplementation TestImplementation.jUnit
     androidTestImplementation TestImplementation.testRunner

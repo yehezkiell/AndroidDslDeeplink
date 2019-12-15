@@ -5,7 +5,6 @@ import android.content.Intent.ACTION_VIEW
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.airbnb.deeplinkdispatch.DeepLink
 import com.example.abstraction.di.MainApplication
 import com.example.home.R
 import com.example.home.di.DaggerHomeComponent
@@ -16,7 +15,6 @@ import retrofit2.Retrofit
 import javax.inject.Inject
 
 
-@DeepLink("nba://www.nbageek.com/home")
 class HomeActivity : AppCompatActivity() {
 
     @Inject
@@ -28,7 +26,7 @@ class HomeActivity : AppCompatActivity() {
         initInjector()
 
         txt_home.setOnClickListener {
-            val uri: Uri = Uri.parse("nba://www.nbageek.com/team/{id}").buildUpon()
+            val uri: Uri = Uri.parse("http://www.nbageek.com/team/{id}").buildUpon()
                 .appendQueryParameter("id", "123")
                 .build()
             startActivity(Intent(ACTION_VIEW, uri))

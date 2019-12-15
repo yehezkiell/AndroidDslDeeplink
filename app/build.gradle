@@ -62,10 +62,6 @@ dependencies {
     kapt Libraries.daggerAndroidSupportCompiler
     kapt Libraries.daggerCompiler
 
-    //Deeplink
-    implementation Libraries.deepLink
-    kapt Libraries.deepLinkAnotation
-
     implementation Libraries.coroutines
     implementation Libraries.coroutinesAdapter
     implementation Libraries.coroutinesAndroid

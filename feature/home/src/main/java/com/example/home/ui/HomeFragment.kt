@@ -33,8 +33,8 @@ class HomeFragment : BaseDaggerFragment() {
         Toast.makeText(context!!, viewModel.getInfo(), Toast.LENGTH_LONG).show()
 
         txt_home.setOnClickListener {
-            val uri: Uri = Uri.parse("nba://www.nbageek.com").buildUpon()
-                .appendPath("home")
+            val uri: Uri = Uri.parse("http://www.nbageek.com/team").buildUpon()
+                .appendQueryParameter("id","123")
                 .build()
             startActivity(Intent(ACTION_VIEW, uri))
         }

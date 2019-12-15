@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.team">
+        package="com.example.team">
 
     <application>
         <activity
-                android:name="TeamListActivity"
+                android:name="TeamActivity"
                 android:label="@string/title_activity_team_list"
                 android:theme="@style/AppTheme.NoActionBar">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "http://www.nbageek.com/team” -->
+                <data
+                        android:host="@string/host"
+                        android:pathPrefix="/team"
+                        android:scheme="@string/scheme" />
+            </intent-filter>
         </activity>
     </application>
 

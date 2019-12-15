@@ -55,8 +55,6 @@ object Libraries {
     val kotlinStandardLibrary = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.kotlinVersion}"
     val googleMaterial = "com.google.android.material:material:${Versions.supportVersion}"
     val appCompat = "androidx.appcompat:appcompat:${Versions.appCompatVersion}"
-    val deepLink = "com.airbnb:deeplinkdispatch:${Versions.deepLinkVersion}"
-    val deepLinkAnotation = "com.airbnb:deeplinkdispatch-processor:${Versions.deepLinkVersion}"
     val dagger = "com.google.dagger:dagger:${Versions.daggerVersion}"
     val daggerAndroid = "com.google.dagger:dagger-android:${Versions.daggerVersion}"
     val daggerAndroidSupport = "com.google.dagger:dagger-android-support:${Versions.daggerVersion}"

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">abstraction</string>
+    <string name="host">www.nbageek.com</string>
+    <string name="scheme">http</string>
+
+
+
+    <string name="team">/team</string>
 </resources>
