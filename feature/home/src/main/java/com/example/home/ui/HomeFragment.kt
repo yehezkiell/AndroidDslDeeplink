@@ -4,10 +4,12 @@ import android.content.Intent
 import android.content.Intent.ACTION_VIEW
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import com.example.abstraction.base.BaseDaggerFragment
 import com.example.abstraction.di.MainApplication
@@ -31,15 +33,28 @@ class HomeFragment : BaseDaggerFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.getProductCoroutineScope()
+
         Toast.makeText(context!!, viewModel.getInfo(), Toast.LENGTH_LONG).show()
 
         sumByOne.setOnClickListener {
             viewModel.addNumberOne()
+            val uri = Uri.parse("http://nbageek.com/match-detail")
+            findNavController(view).navigate(uri)
         }
 
         sumByTwo.setOnClickListener {
             viewModel.addNumberTwo()
         }
+
+        viewModel.sumData.observe(this, Observer {
+            Log.e("sumnya",it)
+        })
+
+        viewModel.sumData2.observe(this, Observer {
+            Log.e("sumnya",it)
+        })
+
 
         txt_home.setOnClickListener {
             val uri: Uri = Uri.parse("http://www.nbageek.com/team").buildUpon()

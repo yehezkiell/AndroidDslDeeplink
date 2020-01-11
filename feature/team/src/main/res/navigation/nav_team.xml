@@ -2,12 +2,14 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/team_nav_graph"
-        app:startDestination="@id/teamFragment">
+        android:id="@+id/nav_team"
+        app:startDestination="@+id/teamFragment">
 
     <fragment
             android:id="@+id/teamFragment"
             android:name="com.example.team.TeamFragment"
             android:label="Team"
-            tools:layout="@layout/fragment_team" />
+            tools:layout="@layout/fragment_team">
+    </fragment>
+
 </navigation>

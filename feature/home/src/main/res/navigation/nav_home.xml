@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/nav_home"
+        app:startDestination="@+id/homeFragment">
+
+    <fragment
+            android:id="@+id/homeFragment"
+            android:name="com.example.home.ui.HomeFragment"
+            android:label="Home"
+            tools:layout="@layout/fragment_home">
+        <action
+                android:id="@+id/actionHome_To_Matchdetail"
+                app:destination="@id/matchDetailFragment" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/matchDetailFragment"
+            android:name="com.example.home.ui.MatchDetailFragment"
+            android:label="MatchDetailFragment">
+
+        <deepLink
+                android:id="@+id/deeplink"
+                app:uri="http://nbageek.com/match-detail" />
+    </fragment>
+
+</navigation>
