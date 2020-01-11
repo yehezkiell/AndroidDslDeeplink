@@ -56,7 +56,8 @@ class MainParentActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             when (destination.id) {
-                R.id.homeFragment, R.id.teamFragment -> bottomNavigationView.visibility = View.VISIBLE
+                R.id.homeFragment, R.id.teamFragment, R.id.gamesFragment -> bottomNavigationView.visibility =
+                    View.VISIBLE
                 else -> bottomNavigationView.visibility = View.GONE
             }
         }

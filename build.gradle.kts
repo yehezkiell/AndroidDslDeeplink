@@ -29,4 +29,3 @@ tasks {
         delete(buildDir)
     }
 }
-

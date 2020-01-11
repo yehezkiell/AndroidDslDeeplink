@@ -6,6 +6,11 @@
             android:title="@string/home_navigation_title" />
 
     <item
+            android:id="@+id/nav_games"
+            android:icon="@drawable/ic_slideshow_black_24dp"
+            android:title="@string/games_navigation_title" />
+
+    <item
             android:id="@+id/nav_team"
             android:icon="@drawable/ic_teams_white"
             android:title="@string/teams_navigation_title" />

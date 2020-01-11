@@ -19,7 +19,6 @@ class TeamFragment : BaseDaggerFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         hideToolbars()
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

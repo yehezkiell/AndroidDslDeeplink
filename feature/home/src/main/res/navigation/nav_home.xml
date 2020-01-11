@@ -11,15 +11,19 @@
             android:label="Home"
             tools:layout="@layout/fragment_home">
         <action
-                android:id="@+id/actionHome_To_Matchdetail"
-                app:destination="@id/matchDetailFragment" />
+                android:id="@+id/action_goto_match_detail"
+                app:destination="@+id/matchDetailFragment"
+                app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim"
+                app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+                app:popExitAnim="@anim/nav_default_pop_exit_anim"
+                app:popUpTo="@+id/homeFragment" />
     </fragment>
 
     <fragment
             android:id="@+id/matchDetailFragment"
             android:name="com.example.home.ui.MatchDetailFragment"
             android:label="MatchDetailFragment">
-
         <deepLink
                 android:id="@+id/deeplink"
                 app:uri="http://nbageek.com/match-detail" />

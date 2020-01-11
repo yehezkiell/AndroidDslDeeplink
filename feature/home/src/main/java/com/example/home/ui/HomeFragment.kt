@@ -39,26 +39,30 @@ class HomeFragment : BaseDaggerFragment() {
 
         sumByOne.setOnClickListener {
             viewModel.addNumberOne()
-            val uri = Uri.parse("http://nbageek.com/match-detail")
+            val uri = Uri.parse("http://nbageek.com/team")
             findNavController(view).navigate(uri)
         }
 
         sumByTwo.setOnClickListener {
             viewModel.addNumberTwo()
+//            val uri = Uri.parse("http://nbageek.com/games")
+//            findNavController(view).navigate(uri)
+            findNavController(view).navigate(R.id.action_goto_match_detail)
+
         }
 
         viewModel.sumData.observe(this, Observer {
-            Log.e("sumnya",it)
+            Log.e("sumnya", it)
         })
 
         viewModel.sumData2.observe(this, Observer {
-            Log.e("sumnya",it)
+            Log.e("sumnya", it)
         })
 
 
         txt_home.setOnClickListener {
             val uri: Uri = Uri.parse("http://www.nbageek.com/team").buildUpon()
-                .appendQueryParameter("id","123")
+                .appendQueryParameter("id", "123")
                 .build()
             startActivity(Intent(ACTION_VIEW, uri))
         }

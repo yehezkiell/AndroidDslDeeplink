@@ -3,5 +3,6 @@
     <string name="action_settings">Settings</string>
     <string name="home_navigation_title">Home</string>
     <string name="teams_navigation_title">Teams</string>
+    <string name="games_navigation_title">Games</string>
     <string name="title_player">Players</string>
 </resources>

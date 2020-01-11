@@ -10,6 +10,10 @@
             android:name="com.example.team.TeamFragment"
             android:label="Team"
             tools:layout="@layout/fragment_team">
+        <deepLink
+                android:id="@+id/deepLink"
+                app:uri="http://nbageek.com/team"
+                android:autoVerify="true" />
     </fragment>
 
 </navigation>

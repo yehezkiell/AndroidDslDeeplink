@@ -74,6 +74,7 @@ dependencies {
     androidTestImplementation TestImplementation.testRunner
     androidTestImplementation TestImplementation.espressoCore
 
+    implementation project(Modules.games)
     implementation project(Modules.home)
     implementation project(Modules.team)
     implementation project(Modules.abstraction)
