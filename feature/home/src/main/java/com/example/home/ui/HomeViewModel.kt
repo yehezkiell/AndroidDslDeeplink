@@ -1,15 +1,22 @@
 package com.example.home.ui
 
+import android.util.Log
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.*
-import java.lang.RuntimeException
+import com.example.abstraction.data.TeamApiResponse
+import com.example.abstraction.network.NbaApi
+import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.supervisorScope
+import javax.inject.Inject
 
-class HomeViewModel : ViewModel() {
+class HomeViewModel @Inject constructor(private val nbaApi: NbaApi) : ViewModel() {
     private val numberOne = MutableLiveData<Int>()
     private val numberTwo = MutableLiveData<Int>()
+    val teams = MutableLiveData<TeamApiResponse>()
 
     val sumResult = MediatorLiveData<Int>().apply {
         postValue(0)
@@ -25,6 +32,19 @@ class HomeViewModel : ViewModel() {
 
         sumResult.addSource(numberTwo) {
             sumResult.value = sumResult.value?.plus(it)
+        }
+    }
+
+    fun getTeams() {
+        viewModelScope.launch {
+            try {
+                coroutineScope {
+                    teams.postValue(nbaApi.getAllTeam(mapOf("page" to "1")).body())
+                }
+            } catch (e: Throwable) {
+                Log.e("teamnya", "${e.message}")
+            }
+
         }
     }
 
@@ -78,7 +98,7 @@ class HomeViewModel : ViewModel() {
                     sumData.postValue("Error")
                 }
 
-//                    sumData2.postValue(asyncData2.await())
+                //                    sumData2.postValue(asyncData2.await())
             }
         }
 
@@ -87,7 +107,7 @@ class HomeViewModel : ViewModel() {
 
 
     fun data1(): String {
-//        throw RuntimeException()
+        //        throw RuntimeException()
         return "1"
     }
 

@@ -4,14 +4,13 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.abstraction.di.MainApplication
+import com.example.abstraction.network.NbaApi
 import com.example.nbageek.di.DaggerMainActivityComponent
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,6 +22,9 @@ class MainParentActivity : AppCompatActivity() {
 
     @Inject
     lateinit var retrofit: Retrofit
+
+    @Inject
+    lateinit var nbaApi: NbaApi
 
     private val appBarConfiguration: AppBarConfiguration by lazy {
         AppBarConfiguration.Builder(setOf(R.id.homeFragment, R.id.teamFragment)).build()
@@ -57,7 +59,7 @@ class MainParentActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             when (destination.id) {
                 R.id.homeFragment, R.id.teamFragment, R.id.gamesFragment -> bottomNavigationView.visibility =
-                    View.VISIBLE
+                        View.VISIBLE
                 else -> bottomNavigationView.visibility = View.GONE
             }
         }
@@ -65,9 +67,9 @@ class MainParentActivity : AppCompatActivity() {
 
     private fun initInjector() {
         DaggerMainActivityComponent.builder()
-            .baseAppComponent((application as MainApplication).getBaseAppComponent())
-            .build()
-            .inject(this)
+                .baseAppComponent((application as MainApplication).getBaseAppComponent())
+                .build()
+                .inject(this)
     }
 
     override fun onSupportNavigateUp(): Boolean {

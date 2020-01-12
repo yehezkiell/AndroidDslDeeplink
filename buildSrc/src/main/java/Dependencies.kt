@@ -14,7 +14,7 @@ object Versions {
     const val espressoCoreVersion = "3.2.0"
     const val deepLinkVersion = "4.1.0"
     const val daggerVersion = "2.16"
-    const val retrofit = "2.3.0"
+    const val retrofit = "2.6.0"
     const val archLifecycle = "2.1.0"
     const val coroutines = "1.3.0-M2"
     const val okhttpLogging = "3.11.0"

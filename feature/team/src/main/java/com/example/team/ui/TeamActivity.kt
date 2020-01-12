@@ -1,8 +1,9 @@
-package com.example.team
+package com.example.team.ui
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.team.R
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_team_list.*
 import kotlinx.android.synthetic.main.content_team_list.*

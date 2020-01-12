@@ -2,7 +2,7 @@ package com.example.home.di
 
 import dagger.Module
 
-@Module
+@Module(includes = [HomeViewModelModule::class])
 class HomeModule {
 
 }

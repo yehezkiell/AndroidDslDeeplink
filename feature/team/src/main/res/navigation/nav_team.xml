@@ -7,7 +7,7 @@
 
     <fragment
             android:id="@+id/teamFragment"
-            android:name="com.example.team.TeamFragment"
+            android:name="com.example.team.ui.TeamFragment"
             android:label="Team"
             tools:layout="@layout/fragment_team">
         <deepLink

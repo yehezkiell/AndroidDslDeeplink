@@ -5,9 +5,7 @@ import android.content.Intent.ACTION_VIEW
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.abstraction.di.MainApplication
 import com.example.home.R
-import com.example.home.di.DaggerHomeComponent
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.content_home.*
@@ -39,8 +37,8 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun initInjector() {
-        DaggerHomeComponent.builder()
-            .baseAppComponent((applicationContext as MainApplication).getBaseAppComponent())
-            .build().inject(this)
+//        DaggerHomeComponent.builder()
+//            .baseAppComponent((applicationContext as MainApplication).getBaseAppComponent())
+//            .build().inject(this)
     }
 }
