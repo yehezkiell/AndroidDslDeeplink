@@ -17,6 +17,7 @@ import com.example.abstraction.di.MainApplication
 import com.example.home.R
 import com.example.home.di.DaggerHomeComponent
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import javax.inject.Inject
 
 
@@ -32,15 +33,15 @@ class HomeFragment : BaseDaggerFragment() {
     override fun initInjector() {
         context?.let {
             DaggerHomeComponent.builder()
-                    .baseAppComponent((it.applicationContext as MainApplication).getBaseAppComponent())
-                    .build().inject(this)
+                .baseAppComponent((it.applicationContext as MainApplication).getBaseAppComponent())
+                .build().inject(this)
         }
     }
 
+    @UseExperimental(ExperimentalCoroutinesApi::class)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getProductCoroutineScope()
-        viewModel.getTeams()
 
         Toast.makeText(context!!, viewModel.getInfo(), Toast.LENGTH_LONG).show()
 
@@ -61,6 +62,10 @@ class HomeFragment : BaseDaggerFragment() {
             Log.e("teamnya", "$it")
         })
 
+        viewModel.numberOne.observe(this, Observer {
+            Log.e("numbernya", "$it")
+        })
+
         viewModel.sumData.observe(this, Observer {
             Log.e("sumnya", it)
         })
@@ -72,7 +77,7 @@ class HomeFragment : BaseDaggerFragment() {
 
         txt_home.setOnClickListener {
             val uri: Uri = Uri.parse("http://www.nbageek.com/team").buildUpon()
-                    .appendQueryParameter("id", "123").build()
+                .appendQueryParameter("id", "123").build()
             startActivity(Intent(ACTION_VIEW, uri))
         }
 

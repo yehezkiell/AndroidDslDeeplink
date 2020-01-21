@@ -63,7 +63,6 @@ dependencies {
     kapt Libraries.daggerCompiler
 
     implementation Libraries.coroutines
-    implementation Libraries.coroutinesAdapter
     implementation Libraries.coroutinesAndroid
 
     implementation Libraries.lifecycle

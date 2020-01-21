@@ -4,8 +4,6 @@ apply from: "$rootDir/dynamic-feature.gradle"
 android {
     compileSdkVersion 29
 
-
-
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 29

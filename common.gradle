@@ -59,13 +59,13 @@ dependencies {
     implementation Libraries.navigationKtx
     implementation Libraries.glide
     implementation Libraries.coroutines
-    implementation Libraries.coroutinesAdapter
     implementation Libraries.coroutinesAndroid
     implementation Libraries.glide
 
     implementation Libraries.lifecycle
     implementation Libraries.viewModelKtx
     implementation Libraries.liveData
+    implementation Libraries.liveDataKtx
 
     kapt Libraries.daggerAndroidSupportCompiler
     kapt Libraries.daggerCompiler

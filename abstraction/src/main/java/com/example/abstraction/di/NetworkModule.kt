@@ -4,7 +4,6 @@ import com.example.abstraction.BuildConfig
 import com.example.abstraction.network.NbaApi
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -19,7 +18,6 @@ class NetworkModule {
     fun retrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
                 .client(okHttpClient)
-                .addCallAdapterFactory(CoroutineCallAdapterFactory())
                 .baseUrl(BuildConfig.API_KEY)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()

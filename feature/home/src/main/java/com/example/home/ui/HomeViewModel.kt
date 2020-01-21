@@ -1,22 +1,30 @@
 package com.example.home.ui
 
 import android.util.Log
-import androidx.lifecycle.MediatorLiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.abstraction.data.TeamApiResponse
 import com.example.abstraction.network.NbaApi
-import kotlinx.coroutines.async
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.supervisorScope
+import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
+@ExperimentalCoroutinesApi
 class HomeViewModel @Inject constructor(private val nbaApi: NbaApi) : ViewModel() {
-    private val numberOne = MutableLiveData<Int>()
+    var numberOne = MutableLiveData<Int>()
     private val numberTwo = MutableLiveData<Int>()
-    val teams = MutableLiveData<TeamApiResponse>()
+    private val livedataTest = MutableLiveData(3)
+
+    var teams: LiveData<TeamApiResponse?> = flowApi()
+        .flowOn(Dispatchers.IO)
+        .catch {
+            Log.e("teamnya", it.message)
+        }
+        .map {
+            it.body()
+        }.asLiveData()
 
     val sumResult = MediatorLiveData<Int>().apply {
         postValue(0)
@@ -35,17 +43,10 @@ class HomeViewModel @Inject constructor(private val nbaApi: NbaApi) : ViewModel(
         }
     }
 
-    fun getTeams() {
-        viewModelScope.launch {
-            try {
-                coroutineScope {
-                    teams.postValue(nbaApi.getAllTeam(mapOf("page" to "1")).body())
-                }
-            } catch (e: Throwable) {
-                Log.e("teamnya", "${e.message}")
-            }
+    private suspend fun getApi() = nbaApi.getAllTeam(mapOf("page" to "1"))
 
-        }
+    fun flowApi() = flow {
+        emit(getApi())
     }
 
     fun addNumberOne() {
@@ -101,8 +102,6 @@ class HomeViewModel @Inject constructor(private val nbaApi: NbaApi) : ViewModel(
                 //                    sumData2.postValue(asyncData2.await())
             }
         }
-
-
     }
 
 

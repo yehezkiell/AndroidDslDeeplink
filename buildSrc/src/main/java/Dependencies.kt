@@ -12,13 +12,11 @@ object Versions {
     const val junitVersion = "4.12"
     const val testRunnerVersion = "1.2.0"
     const val espressoCoreVersion = "3.2.0"
-    const val deepLinkVersion = "4.1.0"
     const val daggerVersion = "2.16"
     const val retrofit = "2.6.0"
     const val archLifecycle = "2.1.0"
-    const val coroutines = "1.3.0-M2"
+    const val coroutines = "1.3.3"
     const val okhttpLogging = "3.11.0"
-    const val coroutinesAdapter = "0.9.2"
     const val glide = "4.9.0"
     const val navVersion = "2.1.0"
     const val fragment = "1.2.0-alpha02"
@@ -67,11 +65,11 @@ object Libraries {
     val lifecycle = "androidx.lifecycle:lifecycle-extensions:${Versions.archLifecycle}"
     val lifecycleCompiler = "androidx.lifecycle:lifecycle-compiler:${Versions.archLifecycle}"
     val liveData = "androidx.lifecycle:lifecycle-livedata:${Versions.archLifecycle}"
+    val liveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0-rc02"
+
     val viewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.archLifecycle}"
 
     val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
-    val coroutinesAdapter =
-        "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.coroutinesAdapter}"
     val coroutinesAndroid =
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
 
@@ -86,7 +84,6 @@ object Libraries {
     val fragmentRuntime = "androidx.fragment:fragment:${fragment}"
     val navigationKtx = "androidx.navigation:navigation-ui-ktx:$navVersion"
 
-    val coreUtil = "androidx.legacy:legacy-support-core-utils:$supportVersion"
     val coreKtx = "androidx.core:core-ktx:$supportVersion"
 }
 
