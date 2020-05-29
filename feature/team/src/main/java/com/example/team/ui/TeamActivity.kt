@@ -22,7 +22,6 @@ class TeamActivity : AppCompatActivity() {
 
         intent.data?.let {
             teamId = it.getQueryParameter(ID_PARAM) ?: return@let
-
         }
 
         Log.e("datanya", teamId)

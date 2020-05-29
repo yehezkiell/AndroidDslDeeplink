@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavController
 
 abstract class BaseDaggerFragment : Fragment() {
 
@@ -21,6 +20,9 @@ abstract class BaseDaggerFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (isHideToolbar) {
+            (activity as AppCompatActivity).supportActionBar?.hide()
+        }
         initInjector()
     }
 
@@ -36,13 +38,11 @@ abstract class BaseDaggerFragment : Fragment() {
         super.onResume()
         if (isHideToolbar) {
             (activity as AppCompatActivity).supportActionBar?.hide()
-
         }
     }
 
     override fun onPause() {
         super.onPause()
         (activity as AppCompatActivity).supportActionBar?.show()
-
     }
 }

@@ -71,7 +71,6 @@ dependencies {
     kapt Libraries.daggerCompiler
     kapt Libraries.glideCompiler
     kapt Libraries.lifecycleCompiler
-    kapt Libraries.glideCompiler
 
     testImplementation TestImplementation.jUnit
     androidTestImplementation TestImplementation.testRunner

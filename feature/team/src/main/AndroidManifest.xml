@@ -3,22 +3,22 @@
         package="com.example.team">
 
     <application>
-<!--        <activity-->
-<!--                android:name="TeamActivity"-->
-<!--                android:label="@string/title_activity_team_list"-->
-<!--                android:theme="@style/AppTheme.NoActionBar">-->
+        <activity
+                android:name=".ui.TeamActivity"
+                android:label="@string/title_activity_team_list"
+                android:theme="@style/AppTheme.NoActionBar">
 
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.VIEW" />-->
-<!--                <category android:name="android.intent.category.DEFAULT" />-->
-<!--                <category android:name="android.intent.category.BROWSABLE" />-->
-<!--                &lt;!&ndash; Accepts URIs that begin with "http://www.nbageek.com/team” &ndash;&gt;-->
-<!--                <data-->
-<!--                        android:host="@string/host"-->
-<!--                        android:pathPrefix="/team"-->
-<!--                        android:scheme="@string/scheme" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "http://www.nbageek.com/team” -->
+                <data
+                        android:host="@string/host"
+                        android:pathPrefix="/team"
+                        android:scheme="@string/scheme" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

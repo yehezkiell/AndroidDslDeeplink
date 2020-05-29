@@ -27,7 +27,8 @@ class MainParentActivity : AppCompatActivity() {
     lateinit var nbaApi: NbaApi
 
     private val appBarConfiguration: AppBarConfiguration by lazy {
-        AppBarConfiguration.Builder(setOf(R.id.homeFragment, R.id.teamFragment)).build()
+        AppBarConfiguration.Builder(setOf(R.id.homeFragment, R.id.teamFragment, R.id.gamesFragment))
+            .build()
     }
     private val navController: NavController by lazy { findNavController(R.id.nav_host_container) }
 
@@ -59,7 +60,7 @@ class MainParentActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             when (destination.id) {
                 R.id.homeFragment, R.id.teamFragment, R.id.gamesFragment -> bottomNavigationView.visibility =
-                        View.VISIBLE
+                    View.VISIBLE
                 else -> bottomNavigationView.visibility = View.GONE
             }
         }
@@ -67,9 +68,9 @@ class MainParentActivity : AppCompatActivity() {
 
     private fun initInjector() {
         DaggerMainActivityComponent.builder()
-                .baseAppComponent((application as MainApplication).getBaseAppComponent())
-                .build()
-                .inject(this)
+            .baseAppComponent((application as MainApplication).getBaseAppComponent())
+            .build()
+            .inject(this)
     }
 
     override fun onSupportNavigateUp(): Boolean {

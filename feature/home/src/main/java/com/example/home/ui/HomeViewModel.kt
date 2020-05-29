@@ -19,12 +19,13 @@ class HomeViewModel @Inject constructor(private val nbaApi: NbaApi) : ViewModel(
 
     var teams: LiveData<TeamApiResponse?> = flowApi()
         .flowOn(Dispatchers.IO)
-        .catch {
+        .map {
+            if (!it.isSuccessful) throw RuntimeException(it.message())
+            it.body()
+        }.catch {
             Log.e("teamnya", it.message)
         }
-        .map {
-            it.body()
-        }.asLiveData()
+        .asLiveData()
 
     val sumResult = MediatorLiveData<Int>().apply {
         postValue(0)
